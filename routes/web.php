@@ -25,6 +25,7 @@ Route::get('/jobs/create', function () {
     return view('jobs/create');
 });
 
+//show
 Route::get('/jobs/{id}', function ($id) {
 
 
