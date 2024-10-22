@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+// index
 Route::get('/', function () {
     return view('home'); 
 });
@@ -36,17 +37,6 @@ Route::get('/jobs/{id}', function ($id) {
     }
 });
 
-//edit
-Route::get('/jobs/{id}/edit', function ($id) {
-    $job = Job::find($id);{
-       
-   
-    return view('jobs/edit', ['job' => $job]);
-    }
-});
-
-
-
 //store
 Route::post('/jobs', function () {
     request()->validate([
@@ -62,6 +52,17 @@ Route::post('/jobs', function () {
 
     return redirect('/jobs');
 });
+
+//edit
+Route::get('/jobs/{id}/edit', function ($id) {
+    $job = Job::find($id);{
+       
+   
+    return view('jobs/edit', ['job' => $job]);
+    }
+});
+
+ 
 
 //update
 Route::patch('/jobs/{id}', function ($id) {
