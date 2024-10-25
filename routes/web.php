@@ -17,7 +17,8 @@ Route::resource('jobs', JobController::class);
 //Auth
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
-Route::get('/register', [RegisteredUserController::class, 'store']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
