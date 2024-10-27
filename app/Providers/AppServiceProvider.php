@@ -27,10 +27,10 @@ class AppServiceProvider extends ServiceProvider
         Model::preventLazyLoading();
 
         
-        Gate::define('edit-job', function (User $user, Job $job) {
-            // Check if employer exists and if user is associated with that employer
-            return $job->employer && $job->employer->user && $job->employer->user->is($user);
-        });
+        // Gate::define('edit-job', function (User $user, Job $job) {
+        //     // Check if employer exists and if user is associated with that employer
+        //     return $job->employer && $job->employer->user && $job->employer->user->is($user);
+        // });
         
     }
 }
