@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\Job;
 use App\Jobs\TranslateJob;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
 
 Route::get('test', function() {
+    $job = Job::first();
     TranslateJob::dispatch();
 
     

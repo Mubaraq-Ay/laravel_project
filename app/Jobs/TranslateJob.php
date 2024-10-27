@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -15,7 +16,7 @@ class TranslateJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct(public Job $jobListing)
     {
         //
     }
@@ -25,6 +26,6 @@ class TranslateJob implements ShouldQueue
      */
     public function handle(): void
     {
-        //
+     logger('Translating ' . $this->jobListing->title . 'to Spanish');
     }
 }
